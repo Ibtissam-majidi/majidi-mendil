@@ -10,9 +10,13 @@ import com.bookStore.repository.BookRepository;
 
 @Service
 public class BookService {
-	
+
+	private final BookRepository bRepo;
+
 	@Autowired
-	private BookRepository bRepo;
+	public BookService(BookRepository bRepo) {
+		this.bRepo = bRepo;
+	}
 	
 	public void save(Book b) {
 		bRepo.save(b);

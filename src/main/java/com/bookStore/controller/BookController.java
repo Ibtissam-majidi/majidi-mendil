@@ -12,11 +12,16 @@ import java.util.*;
 @Controller
 public class BookController {
 
-    @Autowired
-    private BookService service;
 
-    @Autowired
-    private MyBookListService myBookService;
+        private final BookService service;
+        private final MyBookListService myBookService;
+
+        @Autowired
+        public BookController(BookService service, MyBookListService myBookService) {
+            this.service = service;
+            this.myBookService = myBookService;
+        }
+
 
     @GetMapping("/")
     public String home() {
@@ -31,9 +36,7 @@ public class BookController {
     @GetMapping("/available_books")
     public ModelAndView getAllBook() {
         List<Book>list=service.getAllBook();
-//		ModelAndView m=new ModelAndView();
-//		m.setViewName("bookList");
-//		m.addObject("book",list);
+
         return new ModelAndView("bookList","book",list);
     }
 

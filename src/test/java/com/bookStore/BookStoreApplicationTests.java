@@ -16,7 +16,6 @@ class BookStoreApplicationTests {
 		// 3. Compléter l'implémentation pour inclure des assertions liées au chargement du contexte.
 
 		// Exemple pour lancer une exception si l'implémentation est manquante :
-		// throw new UnsupportedOperationException("Méthode non implémentée");
 
 		// Si nécessaire, ajoutez ici des assertions ou des validations liées au chargement du contexte.
 	}
